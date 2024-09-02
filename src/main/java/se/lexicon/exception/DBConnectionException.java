@@ -1,4 +1,4 @@
-package se.lexicon.dao.implementation;
+package se.lexicon.exception;
 
 public class DBConnectionException extends RuntimeException {
     public DBConnectionException(String message) {

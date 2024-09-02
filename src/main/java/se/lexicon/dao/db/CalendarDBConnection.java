@@ -1,6 +1,6 @@
 package se.lexicon.dao.db;
 
-import se.lexicon.dao.implementation.DBConnectionException;
+import se.lexicon.exception.DBConnectionException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
