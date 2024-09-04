@@ -11,6 +11,7 @@ public class User {
     //Register a new user
     public User(String username) {
         this.username = username;
+        newPassword();
     }
 
     //Authentication
@@ -39,7 +40,7 @@ public class User {
     }
 
     public String userInfo() {
-        return "Username: " + username + " Password" + password;
+        return "Username: " + username + " Password: " + password;
     }
 
     private String generateRandomPassword() {
