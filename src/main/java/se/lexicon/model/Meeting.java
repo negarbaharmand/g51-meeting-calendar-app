@@ -74,7 +74,7 @@ public class Meeting {
         return calendar;
     }
 
-    private void timeValidation() {
+    public void timeValidation() {
         //check if start time is before now
         LocalDateTime now = LocalDateTime.now();
         if (this.startTime.isBefore(now)) {
@@ -94,8 +94,6 @@ public class Meeting {
         stringBuilder.append("Start Time ").append(startTime).append("\n");
         stringBuilder.append("End Time ").append(endTime).append("\n");
         stringBuilder.append("Description ").append(description).append("\n");
-        stringBuilder.append("Calendar title ").append(calendar.getTitle()).append("\n");
-
         return stringBuilder.toString();
     }
 }

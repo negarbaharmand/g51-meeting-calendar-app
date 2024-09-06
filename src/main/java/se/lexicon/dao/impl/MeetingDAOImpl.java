@@ -7,7 +7,6 @@ import se.lexicon.model.Meeting;
 import java.sql.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,8 +43,7 @@ public class MeetingDAOImpl implements MeetingDAO {
             try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     int meetingId = generatedKeys.getInt(1);
-                    new Meeting(meetingId, meeting.getTitle(), meeting.getStartTime(), meeting.getEndTime(), meeting.getDescription(), meeting.getCalendar());
-                    return meeting;
+                    return new Meeting(meetingId, meeting.getTitle(), meeting.getStartTime(), meeting.getEndTime(), meeting.getDescription(), meeting.getCalendar());
                 } else {
                     String errorMessage = "Creating meeting failed, no ID obtained.";
                     throw new MySQLException(errorMessage);
@@ -87,7 +85,7 @@ public class MeetingDAOImpl implements MeetingDAO {
     }
 
     @Override
-    public Collection<Meeting> findAllMeetingsByCalendarId(int calendarId) {
+    public List<Meeting> findAllMeetingsByCalendarId(int calendarId) {
         List<Meeting> meetings = new ArrayList<>();
         String selectQuery = "SELECT * FROM meetings WHERE calendar_id = ?";
         try (

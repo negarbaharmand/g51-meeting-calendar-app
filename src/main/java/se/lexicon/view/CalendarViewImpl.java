@@ -54,7 +54,7 @@ public class CalendarViewImpl implements CalendarView {
     @Override
     public Meeting promoteMeetingForm() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a title: ");
+        System.out.println("Enter a title for meeting: ");
         String title = scanner.nextLine();
 
         System.out.println("Start Date & Time (yyyy-MM-dd HH:mm): ");
@@ -73,7 +73,7 @@ public class CalendarViewImpl implements CalendarView {
     @Override
     public String promoteCalendarForm() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a title: ");
+        System.out.println("Enter a title for calendar: ");
         return scanner.nextLine();
     }
 }

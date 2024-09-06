@@ -2,7 +2,7 @@ package se.lexicon.dao;
 
 import se.lexicon.model.Meeting;
 
-import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 public interface MeetingDAO {
@@ -11,7 +11,7 @@ public interface MeetingDAO {
     Optional<Meeting> findById(int meetingId);
 
     //select * from meeting
-    Collection<Meeting> findAllMeetingsByCalendarId(int calendarId);
+    List<Meeting> findAllMeetingsByCalendarId(int calendarId);
 
     boolean deleteMeeting(int meetingId);
 
